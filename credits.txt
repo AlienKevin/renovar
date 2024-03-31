@@ -1,1 +1,3 @@
 Laminate brown floor texture: https://freepbr.com/materials/laminate-flooring-pbr-brown/
+
+Art deco wallpaper texture: https://freepbr.com/materials/art-deco-scales-wallpaper/
