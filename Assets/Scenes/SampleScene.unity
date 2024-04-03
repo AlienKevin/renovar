@@ -1131,8 +1131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2253d75e3ddc644b8153409c62dd74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlanePrefab: {fileID: 1211692809}
-  VolumePrefab: {fileID: 1575773288}
+  PlanePrefab: {fileID: 0}
+  VolumePrefab: {fileID: 0}
   PrefabOverrides:
   - Prefab: {fileID: 3760108529993194607, guid: bad523a2cd2554ec39bf74c9eaf75096, type: 3}
     ClassificationLabel: FLOOR
@@ -1635,8 +1635,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 953297014}
-          m_TargetAssemblyTypeName: material_controller, Assembly-CSharp
-          m_MethodName: select_floor_material
+          m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+          m_MethodName: set_floor_material
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2100000, guid: 5a54a5710e66b4be19456b97f97967a2, type: 2}
@@ -1653,8 +1653,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 953297014}
-          m_TargetAssemblyTypeName: material_controller, Assembly-CSharp
-          m_MethodName: select_floor_material
+          m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+          m_MethodName: set_floor_material
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2100000, guid: a8851f241af9045a58b0e58ed91b81e4, type: 2}
