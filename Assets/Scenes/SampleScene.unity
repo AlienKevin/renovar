@@ -1523,9 +1523,11 @@ MonoBehaviour:
   wallMaterials:
   - {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
   - {fileID: 2100000, guid: 641f43878eb39478899f0a773d676887, type: 2}
+  - {fileID: 2100000, guid: ddfd6467aa1e04abbbe7de615f525204, type: 2}
   floorMaterials:
   - {fileID: 2100000, guid: 5a54a5710e66b4be19456b97f97967a2, type: 2}
   - {fileID: 2100000, guid: a8851f241af9045a58b0e58ed91b81e4, type: 2}
+  - {fileID: 2100000, guid: ddfd6467aa1e04abbbe7de615f525204, type: 2}
 --- !u!4 &953297015
 Transform:
   m_ObjectHideFlags: 0
