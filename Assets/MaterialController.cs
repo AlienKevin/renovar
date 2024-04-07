@@ -1,8 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MaterialController : MonoBehaviour
 {
+    public List<Material> wallMaterials;
+    int wallMaterialIndex = 0;
+    public List<Material> floorMaterials;
+    int floorMaterialIndex = 0;
+
     //private OVRSceneManager ovrSceneManager;
 
     //private void Awake()
@@ -10,8 +16,23 @@ public class MaterialController : MonoBehaviour
     //    ovrSceneManager = FindObjectOfType<OVRSceneManager>();
     //}
 
-    private void set_material(string label, Material material)
+    public void selectNext(string label)
     {
+        Material material;
+        switch (label)
+        {
+            case "Floor":
+                floorMaterialIndex = (floorMaterialIndex + 1) % floorMaterials.Count;
+                material = floorMaterials[floorMaterialIndex];
+                break;
+            case "Wall":
+                wallMaterialIndex = (wallMaterialIndex + 1) % wallMaterials.Count;
+                material = wallMaterials[wallMaterialIndex];
+                break;
+            default:
+                throw new ArgumentException("Invalid label: " + label);
+        }
+
         List<OVRSceneAnchor> anchors = new();
         OVRSceneAnchor.GetSceneAnchors(anchors);
         foreach (var anchor in anchors)
@@ -32,15 +53,5 @@ public class MaterialController : MonoBehaviour
         //        break;
         //    }
         //}
-    }
-
-    public void set_floor_material(Material material)
-    {
-        set_material("Floor", material);
-    }
-
-    public void set_wall_material(Material material)
-    {
-        set_material("Wall", material);
     }
 }

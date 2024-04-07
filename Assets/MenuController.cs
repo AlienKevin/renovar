@@ -27,9 +27,9 @@ public class MenuController : MonoBehaviour
         menu.transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
     }
 
-    public void SelectObjectIndex(int index)
+    public void selectNext()
     {
-        selectedObjectIndex = index;
+        selectedObjectIndex = (selectedObjectIndex + 1) % objects.Count;
         PrefabSpawner.instance.UpdateObjectPrefab(objects[selectedObjectIndex]);
     }
 
