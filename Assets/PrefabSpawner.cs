@@ -38,9 +38,8 @@ public class PrefabSpawner : MonoBehaviour
             if (anchor != null)
             {
                 focusedLabel = anchor.Labels[0];
-                Debug.Log("Focused Label: " + focusedLabel);
-                Debug.Log(hit.collider.gameObject);
-                Debug.Log(anchor.Labels);
+                //Debug.Log("Focused Label: " + focusedLabel);
+                //Debug.Log(anchor.Labels);
 
                 objectPrefab.transform.position = hit.point;
                 objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);

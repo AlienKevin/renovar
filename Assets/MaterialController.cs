@@ -20,15 +20,18 @@ public class MaterialController : MonoBehaviour
     {
         Material material;
         string label = PrefabSpawner.instance.focusedLabel;
+        Debug.Log("selectNext label: " + label);
         switch (label)
         {
             case "FLOOR":
                 floorMaterialIndex = (floorMaterialIndex + 1) % floorMaterials.Count;
                 material = floorMaterials[floorMaterialIndex];
+                label = "Floor";
                 break;
             case "WALL_FACE":
                 wallMaterialIndex = (wallMaterialIndex + 1) % wallMaterials.Count;
                 material = wallMaterials[wallMaterialIndex];
+                label = "Wall";
                 break;
             default:
                 throw new ArgumentException("Invalid label: " + label);
