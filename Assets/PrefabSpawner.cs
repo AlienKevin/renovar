@@ -40,14 +40,14 @@ public class PrefabSpawner : MonoBehaviour
                 focusedLabel = anchor.Labels[0];
                 //Debug.Log("Focused Label: " + focusedLabel);
                 //Debug.Log(anchor.Labels);
+            }
 
-                objectPrefab.transform.position = hit.point;
-                objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            objectPrefab.transform.position = hit.point;
+            objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-                {
-                    Instantiate(objectPrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
-                }
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+            {
+                Instantiate(objectPrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
         }
     }
