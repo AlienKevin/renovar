@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class PrefabSpawner : MonoBehaviour
 {
-    public GameObject prefab;
-    public GameObject previewPrefab;
-    private GameObject currentPreview;
+    public static PrefabSpawner instance;
 
-    void Start() => currentPreview = Instantiate(previewPrefab);
+    private GameObject objectPrefab;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        instance = this;
+        objectPrefab = Instantiate(MenuController.instance.GetSelectedObject());
+    }
+
+    public void UpdateObjectPrefab(GameObject newObject)
+    {
+        Destroy(objectPrefab);
+        objectPrefab = Instantiate(newObject);
+    }
 
     void Update()
     {
@@ -16,12 +32,12 @@ public class PrefabSpawner : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            currentPreview.transform.position = hit.point;
-            currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            objectPrefab.transform.position = hit.point;
+            objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-            if (OVRInput.GetDown(OVRInput.Button.One))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
             {
-                Instantiate(prefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                Instantiate(objectPrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
         }
     }

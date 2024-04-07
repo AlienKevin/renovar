@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_Name
-      value: coffee_table
+      value: CoffeeTable
       objectReference: {fileID: 0}
     - target: {fileID: 3010821571696201042, guid: 81837c9655a9c734e85715480b66ca0a, type: 3}
       propertyPath: m_Materials.Array.data[0]
