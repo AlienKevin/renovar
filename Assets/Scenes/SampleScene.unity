@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonClickActions:
-  - Title: Granite
+  - Title: GraniteFloor
     Button: 1
     ButtonMode: 0
     Callback:
@@ -1829,7 +1829,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Title: Laminate
+  - Title: LaminateFloor
     Button: 2
     ButtonMode: 0
     Callback:
@@ -1841,6 +1841,42 @@ MonoBehaviour:
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2100000, guid: a8851f241af9045a58b0e58ed91b81e4, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Title: ArtDecoWallpaper
+    Button: 4
+    ButtonMode: 0
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 953297014}
+          m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+          m_MethodName: set_wall_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Title: ModernFracturedWallpaper
+    Button: 8
+    ButtonMode: 0
+    Callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 953297014}
+          m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+          m_MethodName: set_wall_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 641f43878eb39478899f0a773d676887, type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0

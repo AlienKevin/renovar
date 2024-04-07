@@ -2,6 +2,8 @@ Laminate brown floor texture: https://freepbr.com/materials/laminate-flooring-pb
 
 Art deco wallpaper texture: https://freepbr.com/materials/art-deco-scales-wallpaper/
 
+Modern Fractured wallpaper texture: https://freepbr.com/materials/modern-fractured-wallpaper/
+
 TV on Wall Model: https://sketchfab.com/3d-models/tv-0a07d88a6bb64475a0b043678a73b319
 
 Marble Desk Model: https://www.cgtrader.com/free-3d-models/furniture/table/round-west-elm-marble-rose-gold-metal-sofa-cafe-table-desk-tab

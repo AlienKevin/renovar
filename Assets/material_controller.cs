@@ -38,4 +38,9 @@ public class MaterialController : MonoBehaviour
     {
         set_material("Floor", material);
     }
+
+    public void set_wall_material(Material material)
+    {
+        set_material("Wall", material);
+    }
 }
