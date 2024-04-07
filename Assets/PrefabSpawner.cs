@@ -6,6 +6,7 @@ public class PrefabSpawner : MonoBehaviour
 {
     public static PrefabSpawner instance;
 
+    public string focusedLabel;
     private GameObject objectPrefab;
 
     private void Awake()
@@ -32,12 +33,22 @@ public class PrefabSpawner : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            objectPrefab.transform.position = hit.point;
-            objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            OVRSemanticClassification anchor = hit.collider.gameObject.GetComponentInParent<OVRSemanticClassification>();
 
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+            if (anchor != null)
             {
-                Instantiate(objectPrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                focusedLabel = anchor.Labels[0];
+                Debug.Log("Focused Label: " + focusedLabel);
+                Debug.Log(hit.collider.gameObject);
+                Debug.Log(anchor.Labels);
+
+                objectPrefab.transform.position = hit.point;
+                objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+
+                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                {
+                    Instantiate(objectPrefab, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                }
             }
         }
     }

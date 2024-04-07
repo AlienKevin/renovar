@@ -16,16 +16,17 @@ public class MaterialController : MonoBehaviour
     //    ovrSceneManager = FindObjectOfType<OVRSceneManager>();
     //}
 
-    public void selectNext(string label)
+    public void selectNext()
     {
         Material material;
+        string label = PrefabSpawner.instance.focusedLabel;
         switch (label)
         {
-            case "Floor":
+            case "FLOOR":
                 floorMaterialIndex = (floorMaterialIndex + 1) % floorMaterials.Count;
                 material = floorMaterials[floorMaterialIndex];
                 break;
-            case "Wall":
+            case "WALL_FACE":
                 wallMaterialIndex = (wallMaterialIndex + 1) % wallMaterials.Count;
                 material = wallMaterials[wallMaterialIndex];
                 break;
