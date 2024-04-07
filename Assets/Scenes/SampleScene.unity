@@ -1209,17 +1209,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallMaterials:
-  - {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
   - {fileID: 2100000, guid: 641f43878eb39478899f0a773d676887, type: 2}
+  - {fileID: 2100000, guid: dafa80c3b44444458b89c9a612986c11, type: 2}
   - {fileID: 2100000, guid: ddfd6467aa1e04abbbe7de615f525204, type: 2}
+  - {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
   - {fileID: 2100000, guid: 16f8be0c61548494fa8905fa3fe2fa32, type: 2}
   floorMaterials:
-  - {fileID: 2100000, guid: 5a54a5710e66b4be19456b97f97967a2, type: 2}
-  - {fileID: 2100000, guid: a8851f241af9045a58b0e58ed91b81e4, type: 2}
-  - {fileID: 2100000, guid: ddfd6467aa1e04abbbe7de615f525204, type: 2}
-  - {fileID: 2100000, guid: 79c25c6cfbf8543f583b6c7047cfe96e, type: 2}
   - {fileID: 2100000, guid: 07118fc0237f748ab86aacfbc3635c91, type: 2}
+  - {fileID: 2100000, guid: ddfd6467aa1e04abbbe7de615f525204, type: 2}
+  - {fileID: 2100000, guid: a8851f241af9045a58b0e58ed91b81e4, type: 2}
+  - {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
+  - {fileID: 2100000, guid: 79c25c6cfbf8543f583b6c7047cfe96e, type: 2}
   - {fileID: 2100000, guid: 376ce69e92fd84e72b7eb8ff515bd199, type: 2}
+  ceilingMaterials:
+  - {fileID: 2100000, guid: 16f8be0c61548494fa8905fa3fe2fa32, type: 2}
+  - {fileID: 2100000, guid: dafa80c3b44444458b89c9a612986c11, type: 2}
+  - {fileID: 2100000, guid: 641f43878eb39478899f0a773d676887, type: 2}
+  - {fileID: 2100000, guid: d166dae3aa86240608054e381ac5f500, type: 2}
 --- !u!4 &953297015
 Transform:
   m_ObjectHideFlags: 0
@@ -1287,6 +1293,9 @@ MonoBehaviour:
   - Prefab: {fileID: 8331321197817488777, guid: 913501757ce194da19821fd9b56a1274, type: 3}
     ClassificationLabel: WALL_FACE
     _editorClassificationIndex: 2
+  - Prefab: {fileID: 8331321197817488777, guid: e3b234f73faad4b77973fc405f9783ff, type: 3}
+    ClassificationLabel: CEILING
+    _editorClassificationIndex: 1
   ActiveRoomsOnly: 1
   VerboseLogging: 0
   MaxSceneAnchorUpdatesPerFrame: 3
@@ -1627,7 +1636,6 @@ MonoBehaviour:
   - {fileID: 2310433390942042326, guid: 5c4325f6c07bb44b1b84293318f6d162, type: 3}
   - {fileID: 919132149155446097, guid: b548860cc94b5304e900fdab036c9e63, type: 3}
   - {fileID: 461709416056919784, guid: ed30e983bdac44f3f81c5db697f7785b, type: 3}
-  menu: {fileID: 0}
 --- !u!4 &1241364536
 Transform:
   m_ObjectHideFlags: 0

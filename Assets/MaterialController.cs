@@ -8,19 +8,20 @@ public class MaterialController : MonoBehaviour
     int wallMaterialIndex = 0;
     public List<Material> floorMaterials;
     int floorMaterialIndex = 0;
-
-    //private OVRSceneManager ovrSceneManager;
-
-    //private void Awake()
-    //{
-    //    ovrSceneManager = FindObjectOfType<OVRSceneManager>();
-    //}
+    public List<Material> ceilingMaterials;
+    int ceilingMaterialIndex = 0;
 
     public void selectNext()
     {
-        Material material;
+        
         string label = PrefabSpawner.instance.focusedLabel;
         Debug.Log("selectNext label: " + label);
+        setMaterial(label);
+    }
+
+    private void setMaterial(string label)
+    {
+        Material material;
         switch (label)
         {
             case "FLOOR":
@@ -32,6 +33,11 @@ public class MaterialController : MonoBehaviour
                 wallMaterialIndex = (wallMaterialIndex + 1) % wallMaterials.Count;
                 material = wallMaterials[wallMaterialIndex];
                 label = "Wall";
+                break;
+            case "CEILING":
+                ceilingMaterialIndex = (ceilingMaterialIndex + 1) % ceilingMaterials.Count;
+                material = ceilingMaterials[ceilingMaterialIndex];
+                label = "Ceiling";
                 break;
             default:
                 throw new ArgumentException("Invalid label: " + label);
@@ -47,15 +53,5 @@ public class MaterialController : MonoBehaviour
                 anchor.gameObject.GetComponent<MeshRenderer>().material = material;
             }
         }
-
-        //foreach (var @override in ovrSceneManager.PrefabOverrides)
-        //{
-        //    if (@override.ClassificationLabel == label)
-        //    {
-        //        Debug.Log("@override.Prefab.gameObject:", @override.Prefab.gameObject);
-        //        @override.Prefab.gameObject.GetComponent<MeshRenderer>().material = material;
-        //        break;
-        //    }
-        //}
     }
 }

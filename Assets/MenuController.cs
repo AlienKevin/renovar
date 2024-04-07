@@ -7,7 +7,6 @@ public class MenuController : MonoBehaviour
     public static MenuController instance;
 
     public List<GameObject> objects;
-    public GameObject menu;
     private int selectedObjectIndex = 0;
 
     private void Awake()
@@ -19,12 +18,6 @@ public class MenuController : MonoBehaviour
         }
 
         instance = this;
-    }
-
-    void Update()
-    {
-        menu.transform.position = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);        
-        menu.transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
     }
 
     public void selectNext()
