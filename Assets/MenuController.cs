@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +6,10 @@ public class MenuController : MonoBehaviour
 {
     public static MenuController instance;
 
-    public List<GameObject> objects;
-    private int selectedObjectIndex = 0;
+    public List<GameObject> floorObjects;
+    public List<GameObject> wallObjects;
+    public List<GameObject> ceilingObjects;
+    private Dictionary<string, int> selectedIndex = new();
 
     private void Awake()
     {
@@ -18,16 +20,36 @@ public class MenuController : MonoBehaviour
         }
 
         instance = this;
+
+        selectedIndex["FLOOR"] = 0;
+        selectedIndex["WALL_FACE"] = 0;
+        selectedIndex["CEILING"] = 0;
     }
 
-    public void selectNext()
+    private List<GameObject>objects(string label)
     {
-        selectedObjectIndex = (selectedObjectIndex + 1) % objects.Count;
-        PrefabSpawner.instance.UpdateObjectPrefab(objects[selectedObjectIndex]);
+        switch (label)
+        {
+            case "FLOOR":
+                return floorObjects;
+            case "WALL_FACE":
+                return wallObjects;
+            case "CEILING":
+                return ceilingObjects;
+            default:
+                throw new ArgumentException("Invalid label: " + label);
+        }
     }
 
-    public GameObject GetSelectedObject()
+    public void selectNextObject(string label)
     {
-        return objects[selectedObjectIndex];
+        selectedIndex[label] = (selectedIndex[label] + 1) % objects(label).Count;
+        PrefabSpawner.instance.UpdateObjectPrefab(objects(label)[selectedIndex[label]]);
+    }
+
+    public GameObject GetSelectedObject(string label)
+    {
+        Debug.Log("GetSelectedObject(" + label + "): " + objects(label)[selectedIndex[label]]);
+        return objects(label)[selectedIndex[label]];
     }
 }

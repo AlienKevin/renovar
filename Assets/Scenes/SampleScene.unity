@@ -1632,10 +1632,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f4e8ccaf94b4257a64807d108ab9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 2310433390942042326, guid: 5c4325f6c07bb44b1b84293318f6d162, type: 3}
-  - {fileID: 919132149155446097, guid: b548860cc94b5304e900fdab036c9e63, type: 3}
+  floorObjects:
   - {fileID: 461709416056919784, guid: ed30e983bdac44f3f81c5db697f7785b, type: 3}
+  - {fileID: 2310433390942042326, guid: 5c4325f6c07bb44b1b84293318f6d162, type: 3}
+  wallObjects:
+  - {fileID: 5886517178417675885, guid: 334b8702ec40f4aff8da8bf284dc1582, type: 3}
+  ceilingObjects:
+  - {fileID: 7846061052966875125, guid: c216677ca75d74f2c85ca1aec2e00179, type: 3}
 --- !u!4 &1241364536
 Transform:
   m_ObjectHideFlags: 0
