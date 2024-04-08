@@ -41,8 +41,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void selectNextObject(string label)
+    public void selectNextObject()
     {
+        var label = PrefabSpawner.instance.focusedLabel;
         selectedIndex[label] = (selectedIndex[label] + 1) % objects(label).Count;
         PrefabSpawner.instance.UpdateObjectPrefab(objects(label)[selectedIndex[label]]);
     }
