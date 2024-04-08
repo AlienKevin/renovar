@@ -1190,7 +1190,7 @@ GameObject:
   - component: {fileID: 953297015}
   - component: {fileID: 953297014}
   m_Layer: 0
-  m_Name: MaterialManager
+  m_Name: MaterialController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 1241364536}
   - component: {fileID: 1241364535}
   m_Layer: 0
-  m_Name: MenuController
+  m_Name: ObjectController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241364534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f4e8ccaf94b4257a64807d108ab9a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5a687f72afe49be8e8297dd4f42143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floorObjects:
@@ -1640,6 +1640,7 @@ MonoBehaviour:
   ceilingObjects:
   - {fileID: 7846061052966875125, guid: c216677ca75d74f2c85ca1aec2e00179, type: 3}
   - {fileID: 6958837154310990201, guid: 4a2651890a8eb4400b287ca3ea1a9875, type: 3}
+  - {fileID: 4511306456004890384, guid: 94df636f873604fb6919fec003c78dd0, type: 3}
 --- !u!4 &1241364536
 Transform:
   m_ObjectHideFlags: 0

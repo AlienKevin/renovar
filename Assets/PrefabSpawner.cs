@@ -18,7 +18,7 @@ public class PrefabSpawner : MonoBehaviour
         }
 
         instance = this;
-        objectPrefab = Instantiate(MenuController.instance.GetSelectedObject("FLOOR"));
+        objectPrefab = Instantiate(ObjectController.instance.GetSelectedObject("FLOOR"));
     }
 
     public void UpdateObjectPrefab(GameObject newObject)
@@ -43,7 +43,7 @@ public class PrefabSpawner : MonoBehaviour
                 string newLabel = anchor.Labels[0];
                 if (newLabel != focusedLabel) {
                     focusedLabel = newLabel;
-                    UpdateObjectPrefab(MenuController.instance.GetSelectedObject(newLabel));
+                    UpdateObjectPrefab(ObjectController.instance.GetSelectedObject(newLabel));
                 }
                 Debug.Log("Focused Label: " + focusedLabel);
                 //Debug.Log(anchor.Labels);

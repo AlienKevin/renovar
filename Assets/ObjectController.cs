@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuController : MonoBehaviour
+public class ObjectController : MonoBehaviour
 {
-    public static MenuController instance;
+    public static ObjectController instance;
 
     public List<GameObject> floorObjects;
     public List<GameObject> wallObjects;
