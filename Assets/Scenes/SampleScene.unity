@@ -1637,6 +1637,7 @@ MonoBehaviour:
   - {fileID: 2310433390942042326, guid: 5c4325f6c07bb44b1b84293318f6d162, type: 3}
   wallObjects:
   - {fileID: 5886517178417675885, guid: 334b8702ec40f4aff8da8bf284dc1582, type: 3}
+  - {fileID: 6699813294166843829, guid: 2a9868f29141a47d6beabae0c748bedf, type: 3}
   ceilingObjects:
   - {fileID: 7846061052966875125, guid: c216677ca75d74f2c85ca1aec2e00179, type: 3}
   - {fileID: 6958837154310990201, guid: 4a2651890a8eb4400b287ca3ea1a9875, type: 3}
