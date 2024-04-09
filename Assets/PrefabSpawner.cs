@@ -46,26 +46,30 @@ public class PrefabSpawner : MonoBehaviour
                     UpdateObjectPrefab(ObjectController.instance.GetSelectedObject(newLabel));
                 }
                 Debug.Log("Focused Label: " + focusedLabel);
-                //Debug.Log(anchor.Labels);
-            }
 
-            objectPrefab.transform.position = hit.point;
+                if (focusedLabel != "WALL_FACE" && focusedLabel != "FLOOR" && focusedLabel != "CEILING")
+                {
+                    return;
+                }
 
-            if (focusedLabel == "WALL_FACE")
-            {
-                objectPrefab.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
-            }
-            else
-            {
-                objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            }
+                objectPrefab.transform.position = hit.point;
 
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-            {
-                Debug.Log("hit.normal: " + hit.normal);
-                Debug.Log("hit.rotation: " + hit.transform.rotation);
-                Debug.Log("objectPrefab.transform.rotation: " + objectPrefab.transform.rotation);
-                Instantiate(objectPrefab, hit.point, objectPrefab.transform.rotation);
+                if (focusedLabel == "WALL_FACE")
+                {
+                    objectPrefab.transform.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
+                }
+                else
+                {
+                    objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                }
+
+                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                {
+                    Debug.Log("hit.normal: " + hit.normal);
+                    Debug.Log("hit.rotation: " + hit.transform.rotation);
+                    Debug.Log("objectPrefab.transform.rotation: " + objectPrefab.transform.rotation);
+                    Instantiate(objectPrefab, hit.point, objectPrefab.transform.rotation);
+                }
             }
         }
     }
