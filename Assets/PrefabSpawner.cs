@@ -35,17 +35,18 @@ public class PrefabSpawner : MonoBehaviour
         {
             OVRSemanticClassification anchor = hit.collider.gameObject.GetComponentInParent<OVRSemanticClassification>();
 
-            Debug.Log("Hit GameObject: " + hit.collider.gameObject);
-            Debug.Log("Hit GameObject Name: " + hit.collider.gameObject.name);
+            //Debug.Log("Hit GameObject: " + hit.collider.gameObject);
+            //Debug.Log("Hit GameObject Name: " + hit.collider.gameObject.name);
 
             if (anchor != null)
             {
                 string newLabel = anchor.Labels[0];
+                Debug.Log("newLabel: " + newLabel);
                 if (newLabel != focusedLabel) {
                     focusedLabel = newLabel;
                     UpdateObjectPrefab(ObjectController.instance.GetSelectedObject(newLabel));
                 }
-                Debug.Log("Focused Label: " + focusedLabel);
+                //Debug.Log("Focused Label: " + focusedLabel);
 
                 if (focusedLabel != "WALL_FACE" && focusedLabel != "FLOOR" && focusedLabel != "CEILING")
                 {
@@ -63,6 +64,8 @@ public class PrefabSpawner : MonoBehaviour
                     objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 }
 
+                Debug.Log("focusedLabel: " + focusedLabel);
+
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
                 {
                     Debug.Log("hit.normal: " + hit.normal);
@@ -70,6 +73,9 @@ public class PrefabSpawner : MonoBehaviour
                     Debug.Log("objectPrefab.transform.rotation: " + objectPrefab.transform.rotation);
                     Instantiate(objectPrefab, hit.point, objectPrefab.transform.rotation);
                 }
+            } else
+            {
+                Debug.Log("newLabel: null");
             }
         }
     }

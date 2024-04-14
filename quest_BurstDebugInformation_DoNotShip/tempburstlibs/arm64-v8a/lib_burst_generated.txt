@@ -1,4 +1,4 @@
-Library: C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+Library: /Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
 --target=ARMV8A_AARCH64
@@ -9,13 +9,22 @@ Library: C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburs
 --target-framework=NetFramework
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Meta.XR.BuildingBlocks;
+--assembly-defines=meta.xr.mrutilitykit;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
+--assembly-defines=Newtonsoft.Json;
+--assembly-defines=Oculus.Interaction;
+--assembly-defines=Oculus.Interaction.OVR;
 --assembly-defines=Oculus.VR;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
+--assembly-defines=System.Data;
 --assembly-defines=System;
+--assembly-defines=System.Numerics;
+--assembly-defines=System.Runtime.Serialization;
 --assembly-defines=System.Xml;
+--assembly-defines=System.Xml.Linq;
+--assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.Mathematics;
@@ -42,11 +51,11 @@ Library: C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburs
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=UnityEngine;
---generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Library\Burst
---output=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+--generate-link-xml=Temp/burst.link.xml
+--temp-folder=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Temp/Burst
+--key-folder=/Applications/Unity/Hub/Editor/2022.3.20f1/PlaybackEngines/AndroidPlayer
+--decode-folder=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Library/Burst
+--output=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ProjectOnPlane(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--1819bc9925667b008fd6c3e6019ccf71
@@ -120,13 +129,22 @@ Library: C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburs
 --float-mode=Fast
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Meta.XR.BuildingBlocks;
+--assembly-defines=meta.xr.mrutilitykit;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
+--assembly-defines=Newtonsoft.Json;
+--assembly-defines=Oculus.Interaction;
+--assembly-defines=Oculus.Interaction.OVR;
 --assembly-defines=Oculus.VR;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
+--assembly-defines=System.Data;
 --assembly-defines=System;
+--assembly-defines=System.Numerics;
+--assembly-defines=System.Runtime.Serialization;
 --assembly-defines=System.Xml;
+--assembly-defines=System.Xml.Linq;
+--assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.Mathematics;
@@ -153,11 +171,11 @@ Library: C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburs
 --assembly-defines=Unity.XR.OpenXR.Features.OculusQuestSupport;
 --assembly-defines=Unity.XR.OpenXR.Features.RuntimeDebugger;
 --assembly-defines=UnityEngine;
---generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Library\Burst
---output=C:\Users\Alex Chen\OneDrive\Desktop\XR 003\p3\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
+--generate-link-xml=Temp/burst.link.xml
+--temp-folder=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Temp/Burst
+--key-folder=/Applications/Unity/Hub/Editor/2022.3.20f1/PlaybackEngines/AndroidPlayer
+--decode-folder=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Library/Burst
+--output=/Users/kevin/Dev/classes/winter2024/eecs498xr/p3/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
