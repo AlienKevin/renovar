@@ -26,6 +26,8 @@ public class PrefabSpawner : MonoBehaviour
     {
         Destroy(objectPrefab);
         objectPrefab = Instantiate(newObject);
+
+        ObjectController.instance.SelectObjectButton(focusedLabel);
     }
 
     //Always position canvas on top of the screen
@@ -38,8 +40,9 @@ public class PrefabSpawner : MonoBehaviour
             newPosition.y += canvasHeightOffset;
             canvas.transform.position = newPosition;
 
-            // Align the canvas to face the camera, only rotating around the y-axis
-            canvas.transform.rotation = Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+            //// Align the canvas to face the camera, only rotating around the y-axis and z-axis
+            canvas.transform.rotation = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, 0);
+            //canvas.transform.LookAt(Camera.main.transform);
         }
     }
 

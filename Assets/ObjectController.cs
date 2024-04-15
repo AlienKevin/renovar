@@ -41,11 +41,22 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-    public void selectIndex(int i)
+    public void selectNextObject()
     {
         var label = PrefabSpawner.instance.focusedLabel;
-        selectedIndex[label] = i;
+        selectedIndex[label] = (selectedIndex[label] + 1) % objects(label).Count;
+        if (label == "FLOOR")
+        {
+            SelectObjectButton(label);
+        }
         PrefabSpawner.instance.UpdateObjectPrefab(objects(label)[selectedIndex[label]]);
+    }
+
+    public void SelectObjectButton(String label)
+    {
+        var buttonName = "Button" + (selectedIndex[label] + 1);
+        var uiButton = GameObject.Find(buttonName).GetComponent<UnityEngine.UI.Button>(); ;
+        uiButton.Select();
     }
 
     public GameObject GetSelectedObject(string label)
