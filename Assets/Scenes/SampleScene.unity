@@ -178,6 +178,9 @@ MonoBehaviour:
   - Prefab: {fileID: 8331321197817488777, guid: 913501757ce194da19821fd9b56a1274, type: 3}
     ClassificationLabel: WALL_FACE
     _editorClassificationIndex: 2
+  - Prefab: {fileID: 8331321197817488777, guid: e588b03560fad4e6caa9c89220641354, type: 3}
+    ClassificationLabel: WINDOW_FRAME
+    _editorClassificationIndex: 6
   ActiveRoomsOnly: 1
   VerboseLogging: 0
   MaxSceneAnchorUpdatesPerFrame: 3
