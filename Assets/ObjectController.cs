@@ -41,10 +41,10 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-    public void selectNextObject()
+    public void selectIndex(int i)
     {
         var label = PrefabSpawner.instance.focusedLabel;
-        selectedIndex[label] = (selectedIndex[label] + 1) % objects(label).Count;
+        selectedIndex[label] = i;
         PrefabSpawner.instance.UpdateObjectPrefab(objects(label)[selectedIndex[label]]);
     }
 

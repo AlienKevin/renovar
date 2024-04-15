@@ -5,9 +5,10 @@ using UnityEngine;
 public class PrefabSpawner : MonoBehaviour
 {
     public static PrefabSpawner instance;
-
+    public GameObject canvas;
     public string focusedLabel = "FLOOR";
     private GameObject objectPrefab;
+    public float canvasHeightOffset = 0.1f;
 
     private void Awake()
     {
@@ -27,8 +28,26 @@ public class PrefabSpawner : MonoBehaviour
         objectPrefab = Instantiate(newObject);
     }
 
+    //Always position canvas on top of the screen
+    private void PositionCanvas()
+    {
+        if (canvas != null)
+        {
+            Vector3 controllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+            Vector3 newPosition = controllerPosition;
+            newPosition.y += canvasHeightOffset;
+            canvas.transform.position = newPosition;
+
+            // Align the canvas to face the camera, only rotating around the y-axis
+            canvas.transform.rotation = Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+        }
+    }
+
     void Update()
     {
+        PositionCanvas();
+
+
         Ray ray = new Ray(OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch), OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch) * Vector3.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
@@ -66,7 +85,7 @@ public class PrefabSpawner : MonoBehaviour
 
                 Debug.Log("focusedLabel: " + focusedLabel);
 
-                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))
                 {
                     Debug.Log("hit.normal: " + hit.normal);
                     Debug.Log("hit.rotation: " + hit.transform.rotation);
