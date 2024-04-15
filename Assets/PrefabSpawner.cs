@@ -9,6 +9,7 @@ public class PrefabSpawner : MonoBehaviour
     public string focusedLabel = "FLOOR";
     private GameObject objectPrefab;
     public float canvasHeightOffset = 0.1f;
+    private float selectedObjectRotationDegrees = 0f;
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class PrefabSpawner : MonoBehaviour
     {
         Destroy(objectPrefab);
         objectPrefab = Instantiate(newObject);
+
+        selectedObjectRotationDegrees = 0f;
 
         ObjectController.instance.SelectObjectButton(focusedLabel);
     }
@@ -84,16 +87,23 @@ public class PrefabSpawner : MonoBehaviour
                 else
                 {
                     objectPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    objectPrefab.transform.rotation *= Quaternion.Euler(0f, selectedObjectRotationDegrees, 0f);
                 }
 
                 Debug.Log("focusedLabel: " + focusedLabel);
 
-                if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))
+                if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
                 {
                     Debug.Log("hit.normal: " + hit.normal);
                     Debug.Log("hit.rotation: " + hit.transform.rotation);
                     Debug.Log("objectPrefab.transform.rotation: " + objectPrefab.transform.rotation);
                     Instantiate(objectPrefab, hit.point, objectPrefab.transform.rotation);
+                }
+                if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+                {
+                    selectedObjectRotationDegrees += 1.0f;
+                    selectedObjectRotationDegrees %= 360f;
+                    Debug.Log("selectedObjectRotationDegrees: " + selectedObjectRotationDegrees);
                 }
             } else
             {
