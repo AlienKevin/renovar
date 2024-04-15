@@ -3122,7 +3122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorObjects:
-  - {fileID: 461709416056919784, guid: ed30e983bdac44f3f81c5db697f7785b, type: 3}
+  - {fileID: 4405975438997953513, guid: 0fb47cda2ab104553a99f669e0f5f1db, type: 3}
   - {fileID: 2310433390942042326, guid: 5c4325f6c07bb44b1b84293318f6d162, type: 3}
   wallObjects:
   - {fileID: 5886517178417675885, guid: 334b8702ec40f4aff8da8bf284dc1582, type: 3}
