@@ -4778,7 +4778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &666013552
 Transform:
   m_ObjectHideFlags: 0
@@ -9985,6 +9985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1935922517}
   focusedLabel: FLOOR
+  transparentRedMaterial: {fileID: 2100000, guid: 3dd300fb339334bf1a8bf4a34d261d2c, type: 2}
   canvasHeightOffset: 0.1
 --- !u!4 &1392630861
 Transform:

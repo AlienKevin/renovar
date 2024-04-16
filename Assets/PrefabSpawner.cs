@@ -8,6 +8,8 @@ public class PrefabSpawner : MonoBehaviour
     public GameObject canvas;
     public string focusedLabel = "FLOOR";
     private GameObject objectPrefab;
+    private GameObject redBlock;
+    public Material transparentRedMaterial;
     public float canvasHeightOffset = 0.1f;
     private float selectedObjectRotationDegrees = 0f;
 
@@ -66,10 +68,49 @@ public class PrefabSpawner : MonoBehaviour
             if (anchor != null)
             {
                 string newLabel = anchor.Labels[0];
-                Debug.Log("newLabel: " + newLabel);
                 if (newLabel != focusedLabel) {
                     focusedLabel = newLabel;
-                    UpdateObjectPrefab(ObjectController.instance.GetSelectedObject(newLabel));
+                    Debug.Log("newLabel: " + newLabel);
+                    if (focusedLabel != "WALL_FACE" && focusedLabel != "FLOOR" && focusedLabel != "CEILING")
+                    {
+                        if (redBlock == null)
+                        {
+                            redBlock = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            redBlock.name = "RedBlock";
+                            MeshRenderer meshRenderer = redBlock.GetComponent<MeshRenderer>();
+                            meshRenderer.material = transparentRedMaterial;
+                        }
+
+                        // Get the size of the anchor's MeshRenderer or Collider
+                        Vector3 anchorSize = Vector3.zero;
+                        Debug.Log("anchor.gameObject: " + anchor.gameObject);
+                        MeshRenderer anchorMeshRenderer = anchor.gameObject.GetComponentInChildren<MeshRenderer>();
+                        if (anchorMeshRenderer != null)
+                        {
+                            anchorSize = anchorMeshRenderer.bounds.size;
+                            Debug.Log("Found anchor MeshRenderer with size: " + anchorSize);
+                            Debug.Log("Rotation: " + anchorMeshRenderer.transform.rotation);
+                        }
+
+                        // Set the cube's scale to match the anchor's size
+                        redBlock.transform.localScale = anchorSize;
+
+                        // Position and scale the red block to match the focused object
+                        redBlock.transform.position = anchor.transform.position;
+                        redBlock.transform.rotation = anchorMeshRenderer.transform.rotation;
+
+                        // Make the red block a child of the focused object
+                        redBlock.transform.SetParent(anchor.transform, true);
+                    }
+                    else
+                    {
+                        UpdateObjectPrefab(ObjectController.instance.GetSelectedObject(newLabel));
+                        // Destroy the red block if it exists and the focused object is a wall, floor, or ceiling
+                        if (redBlock != null)
+                        {
+                            Destroy(redBlock);
+                        }
+                    }
                 }
                 //Debug.Log("Focused Label: " + focusedLabel);
 
