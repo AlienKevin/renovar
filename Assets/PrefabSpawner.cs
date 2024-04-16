@@ -101,7 +101,8 @@ public class PrefabSpawner : MonoBehaviour
                 }
                 if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
                 {
-                    selectedObjectRotationDegrees += 1.0f;
+                    // Rotate counterclockwise to match the hand trigger press direction on the right hand.
+                    selectedObjectRotationDegrees -= 1.0f;
                     selectedObjectRotationDegrees %= 360f;
                     Debug.Log("selectedObjectRotationDegrees: " + selectedObjectRotationDegrees);
                 }
