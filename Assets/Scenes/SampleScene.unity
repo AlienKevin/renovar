@@ -9985,8 +9985,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1935922517}
   focusedLabel: FLOOR
-  transparentRedMaterial: {fileID: 2100000, guid: 3dd300fb339334bf1a8bf4a34d261d2c, type: 2}
   canvasHeightOffset: 0.1
+  redVolumePassthroughMaterial: {fileID: 2100000, guid: 7b2ea7b46d56a4d4aab74bb0ae7bc121, type: 2}
+  volumePassthroughMaterial: {fileID: 2100000, guid: 2c951709a5e6342a6b011a5a9b503d9e, type: 2}
 --- !u!4 &1392630861
 Transform:
   m_ObjectHideFlags: 0
