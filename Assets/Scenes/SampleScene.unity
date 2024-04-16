@@ -7056,6 +7056,7 @@ GameObject:
   - component: {fileID: 1012663430}
   - component: {fileID: 1012663432}
   - component: {fileID: 1012663431}
+  - component: {fileID: 1012663433}
   m_Layer: 0
   m_Name: '[BuildingBlock] Controller Tracking left'
   m_TagString: Untagged
@@ -7095,7 +7096,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012663429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
   m_Name: 
@@ -7129,6 +7130,32 @@ MonoBehaviour:
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
   instanceId: 034bdedd-a9b6-4543-bf69-09886cd5831f
   version: 1
+--- !u!114 &1012663433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012663429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf8cfac671e8444289d13722095bc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_modelOculusTouchQuestAndRiftSLeftController: {fileID: 606381052}
+  m_modelOculusTouchQuestAndRiftSRightController: {fileID: 578830233}
+  m_modelOculusTouchRiftLeftController: {fileID: 67033809}
+  m_modelOculusTouchRiftRightController: {fileID: 126779789}
+  m_modelOculusTouchQuest2LeftController: {fileID: 1783952190}
+  m_modelOculusTouchQuest2RightController: {fileID: 543205796}
+  m_modelMetaTouchProLeftController: {fileID: 891450913}
+  m_modelMetaTouchProRightController: {fileID: 877223904}
+  m_modelMetaTouchPlusLeftController: {fileID: 1615334169}
+  m_modelMetaTouchPlusRightController: {fileID: 169485055}
+  m_controller: 1
+  m_showState: 1
+  showWhenHandsArePoweredByNaturalControllerPoses: 0
+  RayHelper: {fileID: 0}
 --- !u!1 &1013728538
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,6 +7167,7 @@ GameObject:
   - component: {fileID: 1013728539}
   - component: {fileID: 1013728541}
   - component: {fileID: 1013728540}
+  - component: {fileID: 1013728542}
   m_Layer: 0
   m_Name: '[BuildingBlock]  Controller Tracking right'
   m_TagString: Untagged
@@ -7179,7 +7207,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013728538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
   m_Name: 
@@ -7213,6 +7241,32 @@ MonoBehaviour:
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
   instanceId: 6946129b-1763-44f4-981b-4f9dcd31cfcf
   version: 1
+--- !u!114 &1013728542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013728538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf8cfac671e8444289d13722095bc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_modelOculusTouchQuestAndRiftSLeftController: {fileID: 678511069}
+  m_modelOculusTouchQuestAndRiftSRightController: {fileID: 897249682}
+  m_modelOculusTouchRiftLeftController: {fileID: 536902873}
+  m_modelOculusTouchRiftRightController: {fileID: 1885919319}
+  m_modelOculusTouchQuest2LeftController: {fileID: 2117001601}
+  m_modelOculusTouchQuest2RightController: {fileID: 1045078118}
+  m_modelMetaTouchProLeftController: {fileID: 1610956358}
+  m_modelMetaTouchProRightController: {fileID: 798457801}
+  m_modelMetaTouchPlusLeftController: {fileID: 1841993456}
+  m_modelMetaTouchPlusRightController: {fileID: 1967011027}
+  m_controller: 2
+  m_showState: 1
+  showWhenHandsArePoweredByNaturalControllerPoses: 0
+  RayHelper: {fileID: 0}
 --- !u!1 &1016518964
 GameObject:
   m_ObjectHideFlags: 0
