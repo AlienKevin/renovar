@@ -83,6 +83,8 @@ public class PrefabSpawner : MonoBehaviour
                         {
                             anchorMeshRenderer.material = redVolumePassthroughMaterial;
                         }
+                        // Hide objectPrefab is furniture is selected
+                        Destroy(objectPrefab);
                     }
                     else
                     {
@@ -93,6 +95,10 @@ public class PrefabSpawner : MonoBehaviour
 
                 if (focusedLabel != "WALL_FACE" && focusedLabel != "FLOOR" && focusedLabel != "CEILING")
                 {
+                    if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+                    {
+                        Destroy(anchor.gameObject);
+                    }
                     return;
                 }
 
